@@ -19,13 +19,8 @@ class AppGroupTest extends \Codeception\Test\Unit
     // tests
     public function testMe()
     {
-        $grupo =  new App\Group;
-        $grupo->name = "grupo de teste";
-        var_dump($grupo->save());
-      //  print_r($grupo);
-
-        $grupos =  App\Group::all();
-        print_r($grupos);
-        die();
+        $todos =  App\Group::all();
+        $this->assertEquals(0 , $todos->count());
+     
     }
 }
