@@ -1,8 +1,7 @@
 <?php
 namespace Step\Acceptance;
 
-class Group extends \AcceptanceTester
-{
+class Group extends \AcceptanceTester{
 	private $group;
 	private $todos;
 
