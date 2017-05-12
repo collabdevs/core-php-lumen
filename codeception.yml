@@ -12,3 +12,9 @@ settings:
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+gherkin:
+    contexts:
+        default: 
+            - AcceptanceTester
+            - Step\Acceptance\Group
+
