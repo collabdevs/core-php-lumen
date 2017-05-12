@@ -4,10 +4,12 @@ namespace Step\Acceptance;
 class Group extends \AcceptanceTester
 {
 	private $group;
+	private $todos;
 
-    public function manipulate()
+    public function __construct()
     {
         $I = $this;
+        $this->group = new \App\Group; 
     }
 
     /**
@@ -15,7 +17,7 @@ class Group extends \AcceptanceTester
      */
      public function iHaveGroupWithName($arg1)
      {
-        return "grupo de teste" == $arg1;
+     	$this->group->name = $arg1;
      }
 
     /**
@@ -23,7 +25,7 @@ class Group extends \AcceptanceTester
      */
      public function iCallGroup_save()
      {
-        return true;
+     	$this->group->save();
      }
 
     /**
@@ -31,7 +33,7 @@ class Group extends \AcceptanceTester
      */
      public function iCallGroups()
      {
-        return true;
+     	$this->todos =  \App\Group::all();
      }
 
     /**
@@ -39,7 +41,7 @@ class Group extends \AcceptanceTester
      */
      public function thenIShouldSeeThatTotalNumberGroupsIs($arg1)
      {
-        return 1 == $arg1;
+        return $this->todos->count() == $arg1;
      }
 
 }
